@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0e0e0e;
+  color: white;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 2rem;
+  background-color: #111827;
+  border-right: 1px solid #1f2937;
+}
+
+.main-heading {
+  color: #3b82f6;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-form input,
+.task-form select {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #1f2937;
+  color: white;
+}
+
+.task-form button {
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.task-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-form label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.toggle-btn {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .toggle-btn {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background-color: #111827;
+    padding: 1rem;
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+  }
+
+  .sidebar.open {
+    display: block;
+  }
+
+  .main-content {
+    padding-top: 4rem;
+  }
+}
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2ecc71;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+  font-weight: bold;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.task-card.animate {
+  transition: transform 0.3s ease, background-color 0.4s;
+}
+
+.task-card.animate:hover {
+  transform: scale(1.02);
+  background-color: #f0f8ff;
+}
+
+
